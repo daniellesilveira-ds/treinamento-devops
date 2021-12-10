@@ -12,3 +12,8 @@ variable config {
   type = list(object({Tipo = string, Nome = string, SubnetId = string}))
   description = "Configuração de tamanho das máquinas"
 }
+
+variable ssh_pub_key {
+  type        = string
+  description = "chave publica ssh"
+}

@@ -12,6 +12,30 @@ data "aws_ami" "ubuntu" {
   }
 }
 
+data http api {
+  url = "https://viacep.com.br/ws/09664000/json/unicode/"
+
+  request_headers = {
+    Accept = "application/json"
+  }
+}
+
+
+#output api {
+ # value       = data.http.api
+#}
+
+
+output name {
+  value       = data.aws_ami.ubuntu.id
+  description = "output de ami"
+}
+
+output api {
+  value       = jsondecode(data.http.api.body).bairro
+}
+
+
 resource "aws_instance" "web" {
   ami           = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"

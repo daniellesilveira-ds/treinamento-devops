@@ -14,6 +14,8 @@ id_rsa_itau_treinamento*
 *.tfstate
 *.tfstate.*
 
+id_rsa*
+
 # Crash log files
 crash.log
 

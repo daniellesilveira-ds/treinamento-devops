@@ -5,13 +5,19 @@ provider "aws" {
 module "vpc_lab" {
   source     = "./vpc_lab"
   nome       = "Terraform VPC Modulo"
-  cidr_block = "172.17.0.0/16"
+  cidr_block = "10.40.0.0/16"
 }
+
+variable ssh_local {
+  type        = string
+}
+
 
 module "ec2_labs" {
   source    = "./ec2_lab"
   nome      = "Uma maquina lab Terraform module"
   vpc_id    = module.vpc_lab.vpc_id
+  ssh_pub_key = var.ssh_local
   config    = [
     {
       Tipo = "t2.micro",

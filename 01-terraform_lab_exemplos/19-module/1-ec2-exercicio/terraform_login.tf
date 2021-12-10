@@ -1,3 +1,4 @@
+/*
 terraform {
   backend "remote" {
     organization = "didox"
@@ -7,3 +8,4 @@ terraform {
     }
   }
 }
+*/

@@ -26,7 +26,7 @@ docker stop app-imersao-docker-nodejs
 
 # para remover a imagem do docker
 docker rm app-imersao-docker-nodejs
-
+-
 # para depurar
 docker attach app-imersao-docker-nodejs
 
